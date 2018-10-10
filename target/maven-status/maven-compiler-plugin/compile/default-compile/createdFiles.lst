@@ -1,6 +1,0 @@
-com\tasodrums\EasyNotesApplication.class
-com\tasodrums\exception\ResourceNotFoundException.class
-com\tasodrums\controller\NoteController.class
-com\tasodrums\repository\NoteRepository.class
-com\tasodrums\controller\IndexController.class
-com\tasodrums\model\Note.class
