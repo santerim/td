@@ -1,5 +1,6 @@
 target/
 src/main/resources/application.properties
+nb-configuration.xml
 
 # Package Files #
 *.jar

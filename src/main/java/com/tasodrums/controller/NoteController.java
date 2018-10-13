@@ -9,17 +9,22 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.ModelAndView;
 
-/**
- * Created by rajeevkumarsingh on 27/06/17.
- */
-@RestController
+@Controller
 @RequestMapping("/api")
 public class NoteController {
 
     @Autowired
     NoteRepository noteRepository;
 
+    @GetMapping("/db")
+    public ModelAndView db() {
+        ModelAndView mav = new ModelAndView("db");
+        return mav;
+    }
+    
     @GetMapping("/notes")
     public List<Note> getAllNotes() {
         return noteRepository.findAll();
