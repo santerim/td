@@ -1,6 +1,8 @@
 target/
 src/main/resources/application.properties
 nb-configuration.xml
+WEB-INF/
+img/
 
 # Package Files #
 *.jar

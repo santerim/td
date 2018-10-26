@@ -1,0 +1,80 @@
+/* 
+    Created on : Oct 26, 2018, 7:16:25 AM
+    Author     : Santeri
+*/
+
+@media all and (max-width: 500px) {
+    body {
+        background-color: linen;
+    }
+
+    h2 {
+        font-family: Verdana, Geneva, sans-serif;
+    }
+
+    iframe {
+        width: 100%;
+/*        border-left: 3px solid black;
+        border-right: 3px solid black;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;*/
+    }
+
+    p {
+        /*width: 40%;*/
+        text-align: left;
+        font-family: Verdana, Geneva, sans-serif;
+        font-size: 0.8em;
+    }
+
+    .caption {
+        width: 100%;
+        text-align: left;
+        font-style: italic;
+        font-family: Verdana, Geneva, sans-serif;
+        margin-top: 3px;
+        margin-bottom: 2.5em;
+    }
+
+    .img {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 500px) {
+    body {
+        background-color: linen;
+    }
+
+    h2 {
+        font-family: Verdana, Geneva, sans-serif;
+    }
+
+    iframe {
+        border-left: 3px solid black;
+        border-right: 3px solid black;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+    }
+
+    p {
+        width: 40%;
+        text-align: left;
+        font-family: Verdana, Geneva, sans-serif;
+        font-size: 0.8em;
+    }
+
+    .caption {
+        width: 400px;
+        text-align: left;
+        font-style: italic;
+        font-family: Verdana, Geneva, sans-serif;
+        margin-top: 3px;
+        margin-bottom: 2.5em;
+    }
+
+    .img {
+
+    }
+}
+
