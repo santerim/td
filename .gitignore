@@ -1,8 +1,9 @@
 target/
 src/main/resources/application.properties
 nb-configuration.xml
-WEB-INF/
-img/
+Tasodrums*
+images/
+styles.css
 
 # Package Files #
 *.jar
