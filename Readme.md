@@ -1,2 +1,2 @@
 TD
-Java + MySQL + Node.js
+Java, Spring, HTML, CSS, MySQL

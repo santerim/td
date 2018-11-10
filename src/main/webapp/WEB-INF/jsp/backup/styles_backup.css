@@ -6,12 +6,6 @@
 
 /*big screens*/
 @media all and (min-width: 500px) {
-    * { 
-        -moz-box-sizing: border-box; 
-        -webkit-box-sizing: border-box; 
-        box-sizing: border-box; 
-    }
-
     body {
         margin: 0;
         /*align-content: center;*/
@@ -19,16 +13,7 @@
 
     h2 {
         font-family: Courier, Geneva, sans-serif;
-        font-size: 2em;
-        color: salmon;
         text-align: center;
-        white-space: nowrap;
-        border-bottom: 1px solid salmon;
-        padding-bottom: 3px;
-        /*background-color: green;*/
-        width: min-content;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     iframe {
@@ -36,15 +21,13 @@
                 border-right: 3px solid black;
                 border-bottom: 1px solid black;
                 border-top: 1px solid black;*/
-        /*display: block;*/
     }
 
     p {
         /*width: 40%;*/
         text-align: left;
         font-family: Verdana, Geneva, sans-serif;
-        font-size: 1em;
-        color: gray;
+        font-size: 0.8em;
     }
 
     .caption {
@@ -57,21 +40,15 @@
     }
 
     div {
-
-    }
-
-    header{
-
-    }
-    
-    nav{
-        
+        border: 2px;
+        border-color: black;
     }
 
     .centered-content{
         /*max-width: 500px;*/
         /*display: block;*/
         margin: 0 auto;
+
     }
 
     img {
@@ -80,134 +57,80 @@
     }
 
     .navbar {
-        width: 100%;
-        height: 500px;
-        /*background-color: red;*/
-        margin: auto;
-        display: inline-block;
-        background-image: url("images/front-page-parallax-image.png");
-        background-repeat: no-repeat;
-        background-position: -200px -300px;
-        background-size: auto;
-        /*transform: scale(0.5);*/
+        
     }
-
+    
     .navbar-title{
-        width: 50%;
-        height: 80px;
-        float: left;
-        background-color: black;
-        /*display: inline;*/
-    }
-
-    .navbar-title p{
-        margin-top: 15px;
         font-family: 'Hayate', Impact, sans-serif;
-        font-size: 3em;
-        color: white;
-        padding-left: 25px;
     }
-
-    .navbar-links{
-        width: 50%;
-        clear: right;
-        height: 80px;
-        float: right;
-        background-color: black;
-        padding-top: 25px;
-        padding-right: 25px;
-        text-align: right;
-        /*display: inline;*/
-    }
-
-    .navbar-links a{
-        font-family: Arial;
-        font-weight: bold;
-        text-decoration: none;
-        color: white;
-    }
-
-    .navbar-links a:hover{
-        font-family: Arial;
-        font-weight: bold;
-        text-decoration: none;
-        color: red;
-    }
-
-
     .frontPageSlogan{
-        text-align: center;
-        color: white;
         font-family: 'Cubano', Courier, sans-serif;
         font-size: 3em;
-        display: block;
-        padding-top: 300px;
     }
     .frontPageParagraph{
         width: 60%;
-        text-align: center;
-/*        margin: auto;*/
-        /*display: block;*/
     }
-    
-    .main-picture-container{
-        /*position: relative;*/
-        display: inline-block;
-        /*z-index: -1;*/
-        /*height: 50%;*/
-    }
-    
-    .footer-container{
-        background-color: red;
-        width: 100%;
-        margin-top: 5em;
-        display: block;
-        text-align: center;
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-    .footer-plain-text{
-        font-family: Arial;
-        color: white;
-        padding-bottom: 10px;
-    }
-    .footer-links{
 
+    .wrapper {
+        /* The height needs to be set to a fixed value for the effect to work.
+         * 100vh is the full height of the viewport. */
+        height: 100vh;
+        /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
+        overflow-x: hidden;
+        /* Enable scrolling on the page. */
+        overflow-y: auto;
+        /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
+        perspective: 2px;
     }
-    .footer-links a{
-        font-family: Arial;
-        font-size: 2em;
-        color: white;
-        text-decoration: none;
-        padding-left: 10px;
-    }
-    
-    .footer-links a:hover{
-        color: black;
-    }
-    
-    #tasodrums-logo-small{
-        font-family: "Hayate";
-        color: white;
-        font-size: 2em;
-        padding-bottom: 10px;
-    }
-    
-    #main-picture{
-        /*margin-top: auto;*/
+
+    .section {
+        /* Needed for children to be absolutely positioned relative to the parent. */
         position: relative;
-        /*clip-path: inset(150px, 0, 150px, 0);*/
-    }
+        /* The height of the container. Must be set, but it doesn't really matter what the value is. */
+        height: 100vh;
 
-    #current-page-link-color{
-        color: red;
-    }
-    
-    #email{
-        text-decoration: none;
+        /* For text formatting. */
+        display: flex;
+        align-items: center;
+        justify-content: center;
         color: white;
+        text-shadow: 0 0 5px #000;
+
     }
 
+    .parallax::after {
+        /* Display and position the pseudo-element */
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        /* Move the pseudo-element back away from the camera,
+         * then scale it back up to fill the viewport.
+         * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+        transform: translateZ(-1px) scale(1.5);
+        /* Force the background image to fill the whole element. */
+        background-size: 100%;
+        /* Keep the image from overlapping sibling elements. */
+        z-index: -1;
+    }
+
+    /* The styling for the static div. */
+    .static {
+        background: red;
+
+    }
+
+    /* Sets the actual background image. This part is crucial. */
+    .background-image::after {
+        background-image: url("images/front-page-parallax-image.png");
+    }
+
+    /*    .bg2::after {
+            background-image: url('https://placekitten.com/g/800/600');
+        }*/
 }
 
 /*small screens*/
